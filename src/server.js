@@ -17,8 +17,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// Middleware para servir arquivos estáticos
-app.use(express.static('public'));
+// Middleware para servir arquivos estáticos da pasta 'static'
+app.use(express.static(path.join(__dirname, '../static')));
 
 // Rota para processar dados do formulário via GET
 app.get('/process-form', (req, res) => {
